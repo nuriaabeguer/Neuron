@@ -1,0 +1,57 @@
+/* 
+
+UNIDADES ESTÁTICAS (Para tamaños fijos)
+px - cm
+
+UNIDADES DINÁMICAS
+% -> Depende del tamaño del contenedor
+
+vw = Viewport Width -> Ancho de la ventana 
+vh = Viewport Heigth -> Alto de la ventana
+
+rem = Root em -> No es una medida fija -> 1rem es equivalente al fontsize que tenga el html, la raíz (root del documento), por defecto: 16px. Se adapta a lo que el usuario necesita. Por deecto es 16px, si lo cambia el usuario se adapta, es por accedibilidad.
+em -> Es lo mismo que rem, pero saca el valor del contenedor que lo envuelve. Si el contenido de el contenedor que lleva em, crece, las caracteristicas de este contenedor q lleva em crece.
+
+font-size: 2rem; -> La font size seria 32px
+passing: 1.5em; -> El padding sria 32px + 8px (x el 0,5). El em siempre funciona segun el fontsize más cercano
+
+
+
+font-size: clamp(min, variante, max)
+
+Permite poner limite al tamaño de la tipografia, para que crezca y decrezca con el tamaño de la pantalla pero con max y min de tamaños.
+El variante es el valor que varia con el ancho de la pantalla.
+
+Ej:
+font-size: clamp(1rem, 5vw, 4rem)
+
+El 6vw hace que crezca o decrezca mas o menos rapido, cuanto más bajo es el valor, más rapido crece y decrece. Suele ser de 2vw a 6vw, pero no hay un rango fijado
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+:root {
+    /********** COLORES **********/
+    --color-dark: #1F1F1F;
+    --color-light: #F3F3F3;
+    --color-brand: #4391F0;
+
+    /********** SIZES **********/
+    --size-xxs: .5rem;
+    --size-xs: .625rem;
+    --size-sm: 1rem;
+    --sze-md: 2rem;
+    --size-lg: 4rem;
+
+    --size-block: 60.25rem;
+    --size-canvas: 90rem;
+    
+    /********** FONTS (Weight - Size - Family) **********/
+    --font-h1: 400 clamp(3rem, 5vw, 4rem) "Hedvig Letters Serif", serif;
+    --font-h2: 400 clamp(1.5rem, 5vw, 2rem) "Hedvig Letters Serif", serif;
+    --font-h3: 400 clamp(1.1875rem, 5vw, 1.5rem) "Hedvig Letters Serif", serif;
+    --font-h4: 500 clamp(1.0625rem, 5vw, 1.1875rem) "Hedvig Letters Serif", serif;
+    --font-p: 400 .9375rem "Hedvig Letters Serif", serif;
+    --font-link: 500 .9375rem "Hedvig Letters Serif", serif;
+}
