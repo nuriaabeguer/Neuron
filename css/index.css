@@ -41,17 +41,192 @@ El 6vw hace que crezca o decrezca mas o menos rapido, cuanto más bajo es el val
     --size-xxs: .5rem;
     --size-xs: .625rem;
     --size-sm: 1rem;
-    --sze-md: 2rem;
+    --size-md: 2rem;
     --size-lg: 4rem;
 
     --size-block: 60.25rem;
     --size-canvas: 90rem;
+
+    /********** RADIUS **********/
+    --radius-samll: .3125rem;
     
-    /********** FONTS (Weight - Size - Family) **********/
+    /********** FONTS - clamp(Weight - Size - Family)**********/
     --font-h1: 400 clamp(3rem, 5vw, 4rem) "Hedvig Letters Serif", serif;
     --font-h2: 400 clamp(1.5rem, 5vw, 2rem) "Hedvig Letters Serif", serif;
     --font-h3: 400 clamp(1.1875rem, 5vw, 1.5rem) "Hedvig Letters Serif", serif;
-    --font-h4: 500 clamp(1.0625rem, 5vw, 1.1875rem) "Hedvig Letters Serif", serif;
-    --font-p: 400 .9375rem "Hedvig Letters Serif", serif;
-    --font-link: 500 .9375rem "Hedvig Letters Serif", serif;
+    --font-h4: 500 clamp(1.0625rem, 5vw, 1.1875rem) "Instrument Sans", sans-serif;
+    --font-p: 400 .9375rem "Instrument Sans", sans-serif;
+    --font-link: 500 .9375rem "Instrument Sans", sans-serif;
+
+    /* 
+    vw -> Ancho de la pantalla
+    % -> Ancho del contenedor
+    */
 }
+
+
+/******************** GENERAL ********************/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Instrument Sans", sans-serif;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover; /* Evita deformar la imagen si se le pone un alto */
+    /* object-position: top; Deja ajustar la imagen si prefieres q se vea más su top, bottom... Se suele poner en la imagen concreta*/
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/******************** COMPONENTS ********************/
+
+h1, .heading-h1 {
+    font: var(--font-h1);
+}
+
+h2, .heading-h2 {
+        font: var(--font-h2);
+}
+
+h3, .heading-h3 {
+        font: var(--font-h3);
+}
+
+h4, .heading-h4 {
+        font: var(--font-h4);
+}
+
+p, span, li, .font-p {
+        font: var(--font-p);
+}
+
+a, .font-link {
+    font: var(--font-link);
+}
+
+
+a.btn {
+    padding: var(--size-xs) var(--size-md);
+    display: inline-flex;
+    gap: var(--size-xs);
+    align-items: center;
+    border-radius: 100px;
+
+    &.btn--dark {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+    }
+
+    &.btn--light {
+        background-color: var(--color-light);
+        color: var(--color-dark);
+    }
+
+    &:hover {
+        opacity: 70%;
+    }
+
+    transition: opacity 300ms;
+
+/*Caracteristicas que compartan: padding...*/
+/*Clases del las variaciones del boton. Los 2 guiones indican que son una variante del boton. En este caso hay botones blancos y negros*/
+}
+
+.menu-link {
+    opacity: 50%;
+
+    &:hover {
+        opacity: 100%;
+    }
+
+    transition: opacity 200ms;
+}
+
+.img-radius {
+    border-radius: var(--radius-samll);
+}
+
+.block {
+    max-width: var(--size-block);
+    margin: 0 auto;
+}
+
+.section {
+    padding: var(--size-lg) var(--size-sm);
+    max-width: var(--size-canvas); /* Si se pone max-width hay que poner margin 0 auto*/
+    margin: 0 auto;
+}
+
+
+
+
+/******************** HEADER ********************/
+
+.header{
+    max-width: var(--size-canvas);
+    margin: 0 auto;
+    padding: var(--size-md);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo{
+    max-width: 5.75rem;
+}
+
+.header__nav{
+    display: flex;
+    gap: var(--size-md);
+}
+
+
+
+
+/******************** HERO ********************/
+
+.hero {
+    max-width: var(--size-canvas);
+    margin: 0 auto;
+    padding: 0 var(--size-xs);
+}
+
+.hero__background {
+    background-color: var(--color-dark);
+    padding: var(--size-sm);
+    color: var(--color-light);
+    min-height: 80vh;
+    border-radius: var(--radius-samll);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(90deg,rgba(31, 31, 31, 0.2) 0%, rgba(31, 31, 31, 0.2) 100%), url("../media/Home-banner.webp"); /*Por encima de la imagen hay una capa negra con poca opcaidad para poder leer el texto mejor*/
+    
+}
+
+.hero__block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-sm);
+    align-items: start;
+    width: 100%; /* Como el padre es flex, deja de ocupar todo su ancho, pero buscamos que ocupe todo su ancho, por eso le decimos width: 100%*/
+}
+
+
+
+
+
