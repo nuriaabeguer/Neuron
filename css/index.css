@@ -173,7 +173,7 @@ a.btn {
 
 /******************** HEADER ********************/
 
-.header{
+.header {
     max-width: var(--size-canvas);
     margin: 0 auto;
     padding: var(--size-md);
@@ -183,13 +183,25 @@ a.btn {
     align-items: center;
 }
 
-.header__logo{
+.header__logo {
     max-width: 5.75rem;
 }
 
-.header__nav{
+.header__nav {
     display: flex;
     gap: var(--size-md);
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.header__burger {
+    display: none;
+
+    @media (max-width: 768px) {
+        display: inline-block;
+    }
 }
 
 
@@ -205,7 +217,7 @@ a.btn {
 
 .hero__background {
     background-color: var(--color-dark);
-    padding: var(--size-sm);
+    padding: var(--size-md);
     color: var(--color-light);
     min-height: 80vh;
     border-radius: var(--radius-samll);
@@ -215,18 +227,76 @@ a.btn {
     justify-content: center;
 
     background: linear-gradient(90deg,rgba(31, 31, 31, 0.2) 0%, rgba(31, 31, 31, 0.2) 100%), url("../media/Home-banner.webp"); /*Por encima de la imagen hay una capa negra con poca opcaidad para poder leer el texto mejor*/
-    
+
+    background-position: center; /*Posicionar la imagen dentro de la ventana*/
+    background-repeat: no-repeat; /*repeat -> Crea como un mosaico, repite la imagen para cubrir todo*/
+    background-size: cover; /*Cubre todo el contenedor sin estirarse en exceso, se adapta al contenedor cubriendolo*/
 }
 
 .hero__block {
     display: flex;
     flex-direction: column;
-    gap: var(--size-sm);
+    gap: var(--size-md);
     align-items: start;
     width: 100%; /* Como el padre es flex, deja de ocupar todo su ancho, pero buscamos que ocupe todo su ancho, por eso le decimos width: 100%*/
 }
 
 
 
+/******************** CTA ********************/
+.cta1 {
+
+}
+
+.cta1__block {
+    max-width: var(--size-block);
+    margin: 0 auto;
+
+    display: flex;
+    gap: var(--size-lg);
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+.cta1__image {
+    flex: 1 1 300px;
+    border-radius: var(--radius-samll);
+}
+
+.cta1__content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--size-md);
+
+    flex: 1 1 300px;
+}
+
+.cta1__heading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-sm);
+}
 
 
+
+/******************** COSITAS ********************/
+.cositas {
+
+}
+
+.cositas__block {
+    max-width: var(--size-block);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24px, 1fr));
+
+    align-items: center;
+}
+
+.cositas__element {
+    padding: var(--size-sm);
+}
