@@ -65,6 +65,7 @@ El 6vw hace que crezca o decrezca mas o menos rapido, cuanto más bajo es el val
 }
 
 
+
 /******************** GENERAL ********************/
 * {
     padding: 0;
@@ -88,6 +89,8 @@ a {
 ul, ol {
     list-style: none;
 }
+
+
 
 /******************** COMPONENTS ********************/
 
@@ -171,6 +174,7 @@ a.btn {
 
 
 
+
 /******************** HEADER ********************/
 
 .header {
@@ -203,6 +207,7 @@ a.btn {
         display: inline-block;
     }
 }
+
 
 
 
@@ -243,6 +248,7 @@ a.btn {
 
 
 
+
 /******************** CTA ********************/
 .cta1 {
 
@@ -279,6 +285,7 @@ a.btn {
     flex-direction: column;
     gap: var(--size-sm);
 }
+
 
 
 
