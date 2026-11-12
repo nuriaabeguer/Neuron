@@ -250,11 +250,9 @@ a.btn {
 
 
 /******************** CTA ********************/
-.cta1 {
 
-}
 
-.cta1__block {
+.cta__block {
     max-width: var(--size-block);
     margin: 0 auto;
 
@@ -266,12 +264,16 @@ a.btn {
     flex-wrap: wrap;
 }
 
-.cta1__image {
+.cta__image {
     flex: 1 1 300px;
     border-radius: var(--radius-samll);
+
+    @media (max-width: 768px) {
+        order: -1;
+    }
 }
 
-.cta1__content {
+.cta__content {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -280,7 +282,7 @@ a.btn {
     flex: 1 1 300px;
 }
 
-.cta1__heading {
+.cta__heading {
     display: flex;
     flex-direction: column;
     gap: var(--size-sm);
@@ -289,21 +291,79 @@ a.btn {
 
 
 
-/******************** COSITAS ********************/
-.cositas {
+/******************** FEATURES ********************/
 
-}
-
-.cositas__block {
-    max-width: var(--size-block);
-    margin: 0 auto;
-
+.features__block {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24px, 1fr));
-
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
-.cositas__element {
+.features__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-sm);
     padding: var(--size-sm);
+
+    & h3 {
+        display: inline-flex;
+        gap: var(--size-sm);
+        align-items: center;
+    }
 }
+
+
+/******************** SERVICES ********************/
+
+.services__block {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--size-sm);
+}
+
+.services__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--size-sm);
+    padding: var(--size-sm) 0;
+    align-self: stretch;
+}
+
+.services__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-sm);
+
+    & img {
+        max-height: 11rem;
+    }
+}
+
+/******************** PLANS ********************/
+
+.prices__block {
+
+}
+
+.prices__grid {
+
+}
+
+.prices__card {
+
+}
+
+.prices__list {
+    
+}
+
+.ri-close-circle-line {
+
+}
+
+
+
+
+
+
+
