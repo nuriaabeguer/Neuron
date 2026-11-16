@@ -36,6 +36,7 @@ El 6vw hace que crezca o decrezca mas o menos rapido, cuanto más bajo es el val
     --color-dark: #1F1F1F;
     --color-light: #F3F3F3;
     --color-brand: #4391F0;
+    --color-red: #E26868;
 
     /********** SIZES **********/
     --size-xxs: .5rem;
@@ -119,7 +120,7 @@ a, .font-link {
 }
 
 
-a.btn {
+.btn {
     padding: var(--size-xs) var(--size-md);
     display: inline-flex;
     gap: var(--size-xs);
@@ -141,10 +142,33 @@ a.btn {
     }
 
     transition: opacity 300ms;
+}
 
 /*Caracteristicas que compartan: padding...*/
 /*Clases del las variaciones del boton. Los 2 guiones indican que son una variante del boton. En este caso hay botones blancos y negros*/
+
+input, select  {
+    padding: var(--size-sm);
+    border-radius: 100px;
+    background-color: var(--color-light);
+    border: 1px solid transparent;
+
+    &:hover {
+        opacity: 80%;
+    }
+
+    &:focus {
+        border: 1px solid var(--color-dark);
+        outline: none;
+    }
+
+    transition: opacity 250ms, border 250ms;
 }
+
+label:not([for="acceptance"]) {
+    display: none;
+}
+
 
 .menu-link {
     opacity: 50%;
@@ -170,6 +194,8 @@ a.btn {
     max-width: var(--size-canvas); /* Si se pone max-width hay que poner margin 0 auto*/
     margin: 0 auto;
 }
+
+
 
 
 
@@ -212,6 +238,8 @@ a.btn {
 
 
 
+
+
 /******************** HERO ********************/
 
 .hero {
@@ -249,8 +277,9 @@ a.btn {
 
 
 
-/******************** CTA ********************/
 
+
+/******************** CTA ********************/
 
 .cta__block {
     max-width: var(--size-block);
@@ -291,6 +320,8 @@ a.btn {
 
 
 
+
+
 /******************** FEATURES ********************/
 
 .features__block {
@@ -310,6 +341,10 @@ a.btn {
         align-items: center;
     }
 }
+
+
+
+
 
 
 /******************** SERVICES ********************/
@@ -339,31 +374,115 @@ a.btn {
     }
 }
 
-/******************** PLANS ********************/
+
+
+
+
+
+/******************** PRICES ********************/
 
 .prices__block {
-
-}
-
-.prices__grid {
-
+    display: flex;
+    gap: var(--size-sm);
+    flex-wrap: wrap;
 }
 
 .prices__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-md);
+
+    flex: 1 1 280px;
+
+    padding: var(--size-md);
+    background-color: var(--color-light);
+    border-radius: var(--radius-samll);
+
+    &.prices__card--dark {
+        background-color: var(--color-dark);
+        color: var(--color-light);
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    & ul {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-xs);
+
+        & li {
+            display: flex;
+            gap: var(--size-sm);
+
+            & .red { 
+                color: var(--color-red);
+            }
+        }
+    }
+}
+
+.prices__head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--size-sm);
+
+    & .btn {
+        align-self: stretch;
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+/******************** CONTACT ********************/
+
+.contact {
 
 }
 
-.prices__list {
+.contact__block {
+    display: flex;
+    align-items: center;
+    gap: var(--size-md);
+}
+
+.contact__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-md);
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-sm);
+}
+
+.form__columns {
+    display: flex;
+    gap: var(--size-sm);
+    flex-wrap: wrap;
+
+    & .form__field {
+        flex: 1 1 100px;
+    }
+
+}
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-xxs);
     
+    &.form__field--acceptance {
+        flex-direction: row-reverse;
+        justify-content: start;
+    }
 }
-
-.ri-close-circle-line {
-
-}
-
-
-
-
-
-
-
