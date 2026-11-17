@@ -137,6 +137,15 @@ a, .font-link {
         color: var(--color-dark);
     }
 
+    &.btn--submit {
+        padding: var(--size-sm);
+        justify-content: center;
+
+        background-color: var(--color-brand);
+        color: var(--color-light);
+        border: none;
+    }
+
     &:hover {
         opacity: 70%;
     }
@@ -161,8 +170,23 @@ input, select  {
         border: 1px solid var(--color-dark);
         outline: none;
     }
+    
+    &::placeholder {
+        /*Tiene dos puntos porque no es un estado, es un pseudoelemento, no una pseudoclase. No tiene interaccion, como hover, es visual*/
+        font: var(--font-p);
+        color: var(--color-dark));
+        opacity: 80%; /*Se suele poner opacidad para que se diferencie de lo que escribes.*/
+    }
 
     transition: opacity 250ms, border 250ms;
+}
+
+select {
+    border-right: var(--size-sm) solid var(--color-light);
+
+        &:focus {
+        border-right: var(--size-sm) solid var(--color-light)
+    }
 }
 
 label:not([for="acceptance"]) {
@@ -442,20 +466,38 @@ label:not([for="acceptance"]) {
 
 /******************** CONTACT ********************/
 
-.contact {
-
-}
-
 .contact__block {
     display: flex;
-    align-items: center;
     gap: var(--size-md);
+    flex-wrap: wrap;
+}
+
+.contact__map {
+    flex: 1 1 320px;
+    border-radius: var(--radius-samll);
+    filter: grayscale(100%);
+    box-shadow: 16px 16px 0 black;
+
+    &:hover {
+        box-shadow: 0px 0px 0 black;
+        transform: translate(16px, 16px);
+    }
+
+    transition: transform 300ms, box-shadow 300ms;
 }
 
 .contact__content {
     display: flex;
     flex-direction: column;
-    gap: var(--size-md);
+    gap: var(--size-lg);
+
+    flex: 1 1 320px;
+}
+
+.contact__heading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-sm);
 }
 
 
@@ -473,7 +515,6 @@ label:not([for="acceptance"]) {
     & .form__field {
         flex: 1 1 100px;
     }
-
 }
 
 .form__field {
@@ -486,3 +527,98 @@ label:not([for="acceptance"]) {
         justify-content: start;
     }
 }
+
+
+
+
+
+
+/******************** NEWS ********************/
+
+.news__block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-md);
+}
+
+.news__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.news__cards {
+    padding: var(--size-sm) 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    gap: var(--size-sm);
+}
+
+.news__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-sm);
+
+}
+
+
+
+
+
+
+
+/******************** FOOTER ********************/
+
+.footer {
+    max-width: var(--size-canvas);
+    margin: 0 auto;
+    padding: var(--size-xs);
+}
+
+.footer__block {
+    padding: var(--size-md);
+
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    border-radius: var(--radius-samll);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-md);
+}
+
+.footer__head {
+    padding: var(--size-sm) 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__logo {
+    max-width: 8.125rem;
+}
+
+.footer__social {
+    display: flex;
+    gap: var(--size-sm);
+
+    & a {
+        font-size: 24px;
+    }
+}
+
+.footer__foot {
+    padding: var(--size-sm) 0;
+
+    opacity: 70%;
+
+    display: flex;
+    gap: var(--size-md);
+}
+
+
+
+
+

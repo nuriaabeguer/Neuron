@@ -206,14 +206,31 @@
         <!---------------------- CONTACT ---------------------->
         <section class="contact section">
             <div class="contact__block block">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d628.8587017568713!2d-0.3558654390987564!3d39.47853107218567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f49cc253387%3A0xa7be35bdeeb341d2!2sCEI%20Centro%20de%20Estudios%20Innovaci%C3%B3n%20Valencia!5e0!3m2!1ses!2ses!4v1794843973903!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                
+                <iframe class="contact__map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d628.8587017568713!2d-0.3558654390987564!3d39.47853107218567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f49cc253387%3A0xa7be35bdeeb341d2!2sCEI%20Centro%20de%20Estudios%20Innovaci%C3%B3n%20Valencia!5e0!3m2!1ses!2ses!4v1794843973903!5m2!1ses!2ses"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+                <!-- El <form> siempre lleva los 2 atributos:
+                    action -> dice donde van los datos.
+                    method -> dice como va a enviar la información del usuario al archivo que indica el action. Puede hacerlo con GET o POST
+
+                    El for="" en <label> conecta con el id="" del <input>
+                    name="" -> es lo que ayuda en la accesibilidad
+                    type="" -> indica el tipo de "casilla" que es en el form
+                    placeholder="" -> muestra al usuario que es la casilla, o que poner en ella
+                    required -> Casilla requerida para continur
+                    disabled -> Casilla que no va
+                    value="" -> Valor definifo de la casilla
+                    readonly -> Valor predefinidos, guardados, que no se pueden cambiar
+
+                    outline -> linea rara que tienen las casillas del form, se suele quitar-->
+
                 <div class="contact__content">
-                    <div>
+                    <div class="contact__heading">
                         <h2>Contact with us</h2>
                         <p>You can also check other ways to contact us on the contact page.</p>
                     </div>
-
                     <form class="form" action="#" method="post">
                         <div class="form__columns">
                             <div class="form__field">
@@ -242,19 +259,81 @@
                             <label for="acceptance">I have read and accept the privacy policy.</label>
                             <input id="acceptance" name="acceptance" type="checkbox" required>
                         </div>
-                        <button type="submit" class="btn btn--dark">Send <i class="ri-arrow-right-up-line"></i></button>
+                        <button type="submit" class="btn btn--submit">Send <i
+                                class="ri-arrow-right-up-line"></i></button>
                     </form>
 
-                    <!-- El <form> siempre lleva los 2 atributos:
-                    action -> dice donde van los datos.
-                    method -> dice como va a enviar la información del usuario al archivo que indica el action. Puede hacerlo con GET o POST.-->
                 </div>
+            </div>
+        </section>
+
+
+        <!---------------------- NEWS ---------------------->
+        <section class="news section">
+            <div class="news__block block">
+                <div class="news__heading">
+                    <h3>Latest post</h3>
+                    <a href="news.html" class="btn btn--dark">Go read all our posts <i
+                            class="ri-arrow-right-up-line"></i></a>
+                </div>
+                <ul class="news__cards">
+                    <li class="news__card">
+                        <picture>
+                            <source srcset="media/News-1.avif" type="image/avif">
+                            <source srcset="media/News-1.webp" type="image/webp">
+                            <img class="img-radius" src="media/News-1.jpg" alt="">
+                        </picture>
+                        <h3>The Ultimate Guide to Digital Transformation for Small...</h3>
+                        <p>Embracing digital transformation is essential for small businesses seeking growth and
+                            resilience...</p>
+                        <a href="#" class="font-p">Read more</a>
+                    </li>
+                    <li class="news__card">
+                        <picture>
+                            <source srcset="media/News-2.avif" type="image/avif">
+                            <source srcset="media/News-2.webp" type="image/webp">
+                            <img class="img-radius" src="media/News-2.jpg" alt="">
+                        </picture>
+                        <h3>Why Cloud Solutions Are the Backbone of Modern Enterprises</h3>
+                        <p>Cloud technologies offer flexibility, security, and scalability for all types of
+                            organizations. Learn how cloud solutions...</p>
+                        <a href="#" class="font-p">Read more</a>
+                    </li>
+                    <li class="news__card">
+                        <picture>
+                            <source srcset="media/News-3.avif" type="image/avif">
+                            <source srcset="media/News-3.webp" type="image/webp">
+                            <img class="img-radius" src="media/News-3.jpg" alt="">
+                        </picture>
+                        <h3>Automate to Innovate: How Workflow Automation Boosts...</h3>
+                        <p>Implementing workflow automation helps eliminate repetitive tasks and human error. Explore
+                            key automation tools and...</p>
+                        <a href="#" class="font-p">Read more</a>
+                    </li>
+                </ul>
+                <span class="heading-h4">We write for you, with love from neuron.</span>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!---------------------- FOOTER ---------------------->
+    <footer class="footer">
+        <div class="footer__block">
+            <div class="footer__head">
+                <img class="footer__logo" src="media/logo-light.svg">
+                <ul class="footer__social">
+                    <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+                    <li><a href="#"><i class="ri-twitter-x-fill"></i></a></li>
+                    <li><a href="#"><i class="ri-pinterest-line"></i></a></li>
+                    <li><a href="#"><i class="ri-linkedin-box-line"></i></a></li>
+                </ul>
+            </div>
+            <ul class="footer__foot">
+                <li><a href="#">Legal Notice</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+            </ul>
+        </div>
     </footer>
-
 </body>
 </html>
