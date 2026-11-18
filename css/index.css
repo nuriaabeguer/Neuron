@@ -75,6 +75,10 @@ El 6vw hace que crezca o decrezca mas o menos rapido, cuanto más bajo es el val
     font-family: "Instrument Sans", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 img {
     max-width: 100%;
     width: 100%;
@@ -303,6 +307,72 @@ label:not([for="acceptance"]) {
 
 
 
+/******************** HERO SMALL ********************/
+
+.hero-small {
+    max-width: var(--size-canvas);
+    margin: 0 auto;
+    padding: 0 var(--size-xs);
+}
+
+.hero-small__background {
+    background-color: var(--color-dark);
+    padding: var(--size-md);
+    min-height: 20vh;
+
+    color: var(--color-light);
+    border-radius: var(--radius-samll);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &.hero-small__background--services {
+        background: linear-gradient(90deg,rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../media/Services-banner.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    &.hero-small__background--news {
+        background: linear-gradient(90deg,rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../media/News-banner.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    &.hero-small__background--contact {
+        background: linear-gradient(90deg,rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../media/Contact-banner.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    &.hero-small__background--about {
+        background: linear-gradient(90deg,rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../media/About-banner.webp");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+}
+
+
+
+
+.hero-small__block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-md);
+    align-items: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
 /******************** CTA ********************/
 
 .cta__block {
@@ -364,8 +434,24 @@ label:not([for="acceptance"]) {
         gap: var(--size-sm);
         align-items: center;
     }
+
 }
 
+
+.features__block--contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--size-xs);
+}
+
+.features__card--contact {
+    background-color: var(--color-light);
+    border-radius: var(--radius-samll);
+
+    & .features__chat {
+        text-decoration: underline;
+    }
+}
 
 
 
@@ -468,7 +554,7 @@ label:not([for="acceptance"]) {
 
 .contact__block {
     display: flex;
-    gap: var(--size-md);
+    gap: var(--size-lg);
     flex-wrap: wrap;
 }
 
@@ -620,5 +706,10 @@ label:not([for="acceptance"]) {
 
 
 
+/******************** WAIT ABOUT ********************/
 
-
+.wait__block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-md);
+}
