@@ -266,6 +266,43 @@ label:not([for="acceptance"]) {
 
 
 
+/******************** POPUP ********************/
+
+#popup-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-light);
+
+    display: none;
+    align-items: center;
+    padding: var(--size-lg);
+
+    z-index: 10;
+
+    &:target {
+        display: flex;
+    }
+}
+
+.popup-menu__nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-md);
+}
+
+.close-popup {
+    position: absolute;
+    top: 2rem;
+    right: 3.5rem;
+
+    font-size: 1rem;
+}
+
+
 
 
 /******************** HERO ********************/
