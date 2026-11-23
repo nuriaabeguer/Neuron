@@ -31,6 +31,25 @@ El 6vw hace que crezca o decrezca mas o menos rapido, cuanto más bajo es el val
 
 @import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        filter: blur(5rem);
+        transform: translateY(2rem);
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
+
+    to{
+        opacity: 100%;
+        filter: blur(0);
+        transform: translateY(0);
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+        /*https://bennettfeely.com/clippy/*/
+    }
+}
+
+
 :root {
     /********** COLORES **********/
     --color-dark: #1F1F1F;
@@ -67,6 +86,19 @@ El 6vw hace que crezca o decrezca mas o menos rapido, cuanto más bajo es el val
 
 
 
+
+
+/******************** ANIMATION ********************/
+.anim-appear {
+    animation-name: appear;
+    animation-timing-function: linear; /*Para hacer animacion de scroll tiene que ser una animacion linear*/
+    animation-timeline: view(block 90% 0%);
+}
+
+
+
+
+
 /******************** GENERAL ********************/
 * {
     padding: 0;
@@ -94,6 +126,7 @@ a {
 ul, ol {
     list-style: none;
 }
+
 
 
 
